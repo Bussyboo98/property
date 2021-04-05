@@ -52,7 +52,7 @@ class Property(models.Model):
         (CHOOSE, 'Choose An Offer Type'),
     ]
     property_name = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200)
+    slug = models.SlugField(max_length=200, unique=True)
     property_img1 = models.FileField(blank=True, null=True, verbose_name='Property Image 1', upload_to='uploads/properties')
     property_img2 = models.FileField(blank=True, null=True, verbose_name='Property Image 2', upload_to='uploads/properties')
     property_img3 = models.FileField(

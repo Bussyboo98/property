@@ -8,18 +8,17 @@ def index(request):
     return  render(request,'frontend/index.html')
 
 def about(request):
-    about = Team.objects.all() 
-    return  render(request,'frontend/about.html',{'abt': about})
+    return  render(request,'frontend/about.html')
 
-def about_detail(request, abt_id):
-    detail = Team.objects.get(id=abt_id)
-    return render(request, 'frontend/about-detail.html', {'det':detail})
+def about_detail(request):
+    return render(request, 'frontend/about-detail.html')
 
 def rent(request):
     return  render(request,'frontend/view-list.html')
 
 def agent(request):
-    return  render(request,'frontend/agent.html')
+    contactagent = ContactAgent.objects.all() 
+    return  render(request,'frontend/agent.html', {'con' : contactagent})
 
 def request(request):
     return  render(request,'frontend/request.html')
@@ -33,5 +32,6 @@ def sale(request):
 def offer(request):
     return  render(request,'frontend/view-list.html')
 
-
+def property(request):
+    return render(request,'frontend/property-details.html')
     
